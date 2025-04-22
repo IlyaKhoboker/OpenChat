@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  height: fit-content;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 100px;
+  gap: 150px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  height: fit-content;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.salutation {
+  display: flex;
+  flex-direction: column;
+  text-wrap: wrap;
+  color: var(--bs-primary);
+  font-size: 24px;
+  width: 100%;
+  height: fit-content;
+  gap: 20px;
+}
+
+.header {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  color: #991818;
+}
+
+.form input {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.form button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.form__social-networks-auth {
+  display: flex;
+  justify-content: space-around;
+  width: 250px;
+  margin-top: 35px;
+}
