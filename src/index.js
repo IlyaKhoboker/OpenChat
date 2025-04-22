@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./app/App";
+import { Provider } from "react-redux";
+import { store, persistor } from "./app/providers/store";
+import { PersistGate } from "redux-persist/integration/react";
 import firebase from "firebase/app";
 import "firebase/auth";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 var firebaseConfig = {
   apiKey: "AIzaSyAKc3lpbS6i2BavgdgyXoBiWi5n1CO3_6s",
@@ -18,4 +22,11 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>,
+  document.getElementById("root")
+);
