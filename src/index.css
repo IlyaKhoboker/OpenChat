@@ -60,3 +60,9 @@ code {
 .form-label.disabled {
   color: var(--bs-secondary);
 }
+
+/* Стили для Input */
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(253, 177, 13, 0.25);
+}
