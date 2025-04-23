@@ -18,18 +18,18 @@ export default function SignUp() {
       confirmPassword: "",
     },
     validationSchema: yup.object({
-      email: yup.string().email("Invalid email format").required("Required!"),
+      email: yup.string().email("Неверный email фомат").required("Обязательно!"),
       password: yup
         .string()
-        .required("Required!")
+        .required("Обязательно!")
         .matches(
           /^.*(?=.{8,})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-          "A password must contains at least eight characters, including at least one number and includes both lower and uppercase letters"
+          "Пароль должен содержать хотя бы восемь символов, включая хотя бы одну цифру и обе строчные и заглавные буквы"
         ),
       confirmPassword: yup
         .string()
-        .required("Required!")
-        .test("passwords-match", "Passwords must match", function (value) {
+        .required("Обязательно!")
+        .test("passwords-match", "Пароли должны совпадать", function (value) {
           return this.parent.password === value;
         }),
     }),
@@ -70,6 +70,7 @@ export default function SignUp() {
         </div>
         <div className="form__additional-links">
           <Link to="/signIn">Вход</Link>
+          <Link to="/forgotPassword">Забыли пароль?</Link>
         </div>
       </form>
     </div>
