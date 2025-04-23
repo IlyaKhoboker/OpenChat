@@ -1,0 +1,131 @@
+.roomList {
+  display: flex;
+  align-items: center;
+  margin: 0 10px 10px 0;
+  width: 25%;
+  height: 78vh;
+  overflow-y: auto;
+  vertical-align: top;
+}
+
+.delete-room {
+  grid-area: delete;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMzAiIGhlaWdodD0iMzAiCnZpZXdCb3g9IjAgMCAzMCAzMCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij4gICAgPHBhdGggZD0iTSAxNC45ODQzNzUgMi40ODYzMjgxIEEgMS4wMDAxIDEuMDAwMSAwIDAgMCAxNCAzLjUgTCAxNCA0IEwgOC41IDQgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDcuNDg2MzI4MSA1IEwgNiA1IEEgMS4wMDAxIDEuMDAwMSAwIDEgMCA2IDcgTCAyNCA3IEEgMS4wMDAxIDEuMDAwMSAwIDEgMCAyNCA1IEwgMjIuNTEzNjcyIDUgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDIxLjUgNCBMIDE2IDQgTCAxNiAzLjUgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDE0Ljk4NDM3NSAyLjQ4NjMyODEgeiBNIDYgOSBMIDcuNzkyOTY4OCAyNC4yMzQzNzUgQyA3LjkxMDk2ODcgMjUuMjQxMzc1IDguNzYzMzQzOCAyNiA5Ljc3NzM0MzggMjYgTCAyMC4yMjI2NTYgMjYgQyAyMS4yMzY2NTYgMjYgMjIuMDg4MDMxIDI1LjI0MTM3NSAyMi4yMDcwMzEgMjQuMjM0Mzc1IEwgMjQgOSBMIDYgOSB6Ij48L3BhdGg+PC9zdmc+")
+    50% 50% no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.delete-room:hover {
+  transition: 0.3s;
+  transform: scale(1.2);
+}
+
+.roomList::-webkit-scrollbar-thumb {
+  background-color: #595b5c77;
+}
+
+.roomList::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f9f9fd;
+}
+
+.roomList::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+}
+
+#d-inline-flex {
+  display: inline-flex;
+  height: 100%;
+  width: 40%;
+}
+
+h3 {
+  padding: 10px;
+}
+
+.roomList__link {
+  cursor: pointer;
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  height: fit-content;
+  transition: 0.25s;
+  font-family: sans-serif;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.roomList__link:hover {
+  background-color: #ffffff6f;
+}
+
+.roomList__name {
+  height: fit-content;
+  grid-area: name;
+  overflow-wrap: break-word;
+  position: relative;
+}
+
+.item__locker {
+  position: absolute;
+  right: 2px;
+  top: -6px;
+}
+
+#roomList__item {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: 7em 2em 2em;
+  grid-template-rows: fit-content(auto);
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  overflow-y: none;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "name . delete";
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-radius: 0;
+}
+
+.roomsNotFound {
+  font-family: sans-serif;
+  width: 40%;
+  text-align: center;
+  color: #ffffff6f;
+}
+
+/* LOADER */
+
+.lds-dual-ring {
+  display: block;
+  margin: 30vh auto;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #cef;
+  border-color: #cef transparent #cef transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
