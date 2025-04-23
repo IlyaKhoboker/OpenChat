@@ -1,4 +1,11 @@
-import { SIGN_IN_SUCCESS, SIGN_IN_FAILURE, SIGN_UP_SUCCESS, SIGN_UP_FAILURE } from "../actions/authActions";
+import {
+  SIGN_IN_SUCCESS,
+  SIGN_IN_FAILURE,
+  SIGN_UP_SUCCESS,
+  SIGN_UP_FAILURE,
+  FORGOT_PASSWORD_SUCCESS,
+  RESET_PASSWORD_SUCCESS,
+} from "../actions/authActions";
 
 const initialState = {
   user: null,
@@ -55,6 +62,20 @@ export default function authReducer(state = initialState, action) {
       return {
         ...state,
         signUp_error_message: action.error.message,
+      };
+    }
+
+    case FORGOT_PASSWORD_SUCCESS: {
+      return {
+        ...state,
+        passwordIsChanged: false,
+      };
+    }
+
+    case RESET_PASSWORD_SUCCESS: {
+      return {
+        ...state,
+        passwordIsChanged: true,
       };
     }
 
