@@ -6,6 +6,7 @@ import {
   SIGN_UP_FAILURE,
   FORGOT_PASSWORD_SUCCESS,
   RESET_PASSWORD_SUCCESS,
+  SIGN_OUT,
 } from "../actions/authActions";
 
 const initialState = {
@@ -93,6 +94,19 @@ export default function authReducer(state = initialState, action) {
       return {
         ...state,
         passwordIsChanged: true,
+      };
+    }
+
+    case SIGN_OUT: {
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        user: null,
+        signIn_error_message: null,
+        signUp_error_message: null,
+        token: localStorage.getItem("token"),
+        userIsLogged: localStorage.getItem("token") ? true : false,
+        passwordIsChanged: null,
       };
     }
 
