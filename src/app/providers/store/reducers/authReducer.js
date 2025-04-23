@@ -1,6 +1,7 @@
 import {
   SIGN_IN_SUCCESS,
   SIGN_IN_FAILURE,
+  GOOGLE_SIGN_IN_SUCCESS,
   SIGN_UP_SUCCESS,
   SIGN_UP_FAILURE,
   FORGOT_PASSWORD_SUCCESS,
@@ -39,6 +40,22 @@ export default function authReducer(state = initialState, action) {
         ...state,
         signIn_error_message: action.error.message,
         userIsLogged: false,
+      };
+    }
+
+    case GOOGLE_SIGN_IN_SUCCESS: {
+      localStorage.setItem("token", action.token);
+      return {
+        ...state,
+        user: {
+          ...{
+            email: action.user.email,
+            uid: action.uid,
+          },
+        },
+        signIn_error_message: null,
+        token: localStorage.getItem("token"),
+        userIsLogged: localStorage.getItem("token") ? true : false,
       };
     }
 
