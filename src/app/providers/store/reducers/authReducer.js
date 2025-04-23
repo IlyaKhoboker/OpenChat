@@ -1,4 +1,4 @@
-import { SIGN_IN_SUCCESS, SIGN_IN_FAILURE } from "../actions/authActions";
+import { SIGN_IN_SUCCESS, SIGN_IN_FAILURE, SIGN_UP_SUCCESS, SIGN_UP_FAILURE } from "../actions/authActions";
 
 const initialState = {
   user: null,
@@ -9,7 +9,7 @@ const initialState = {
   passwordIsChanged: null,
 };
 
-export default function signInReducer(state = initialState, action) {
+export default function authReducer(state = initialState, action) {
   switch (action.type) {
     case SIGN_IN_SUCCESS: {
       localStorage.setItem("token", action.token);
@@ -32,6 +32,29 @@ export default function signInReducer(state = initialState, action) {
         ...state,
         signIn_error_message: action.error.message,
         userIsLogged: false,
+      };
+    }
+
+    case SIGN_UP_SUCCESS: {
+      localStorage.setItem("token", action.token);
+      return {
+        ...state,
+        user: {
+          ...{
+            email: action.user.email,
+            uid: action.uid,
+          },
+        },
+        signUp_error_message: null,
+        token: localStorage.getItem("token"),
+        userIsLogged: localStorage.getItem("token") ? true : false,
+      };
+    }
+
+    case SIGN_UP_FAILURE: {
+      return {
+        ...state,
+        signUp_error_message: action.error.message,
       };
     }
 
