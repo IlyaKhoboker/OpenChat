@@ -1,0 +1,19 @@
+.chat-area {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 80px);
+  padding: 20px;
+  align-items: center;
+}
+
+.verticalLine {
+  width: 0px;
+  height: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.545);
+}
+
+.chatNotSelecter {
+  width: 100%;
+  text-align: center;
+  color: #ffffff6f;
+}
