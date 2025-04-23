@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  height: 100svh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+}
+
+.form {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  width: 500px;
+  height: fit-content;
+  padding: 0 40px;
+  border-radius: 10px;
+}
+
+.salutation {
+  display: flex;
+  flex-direction: column;
+  text-wrap: wrap;
+  color: var(--bs-primary);
+  font-size: 24px;
+  width: 100%;
+  height: fit-content;
+  gap: 20px;
+}
+
+.header {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.marker {
+  font-size: 18px;
+  color: #991818;
+  margin: 0;
+}
+
+.form input {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.form button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.form__additional-links {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__additional-links a {
+  text-decoration: underline;
+  color: var(--bs-light);
+}
+
+.form__social-networks-auth {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--bs-light);
+  margin-top: 5px;
+  width: fit-content;
+}
