@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "../authorization.css";
 import { Button, Label, Input } from "reactstrap";
 import { signInAction } from "../../../app/providers/store/actions/authActions";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const dispatch = useDispatch();
@@ -43,17 +44,20 @@ const SignIn = () => {
         <div>
           <Label>Email</Label>
           <Input type="email" name="email" value={formik.values.email} onChange={formik.handleChange} />
-          {formik.errors.email && formik.touched.email && <p>{formik.errors.email}</p>}
+          {formik.errors.email && formik.touched.email && <span className="marker">{formik.errors.email}</span>}
         </div>
         <div>
           <Label>Пароль</Label>
           <Input type="password" name="password" value={formik.values.password} onChange={formik.handleChange} />
-          {formik.errors.password && formik.touched.password && <p>{formik.errors.password}</p>}
+          {formik.errors.password && formik.touched.password && <span className="marker">{formik.errors.password}</span>}
         </div>
         <div>
           <Button type="submit" color="primary" size="lg">
             Войти
           </Button>
+        </div>
+        <div className="form__additional-links">
+          <Link to="/signUp">Регистрация</Link>
         </div>
       </form>
       <div className="salutation">
