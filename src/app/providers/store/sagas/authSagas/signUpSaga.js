@@ -12,7 +12,7 @@ export function* signUpSagaWorker(action) {
 
     yield put({ type: SIGN_UP_SUCCESS, user: action.payload, token: token, uid: uid });
   } catch (error) {
-    const error_message = new Error("Failed to sign up");
+    const error_message = new Error("Ошибка регистрации");
 
     yield put({ type: SIGN_UP_FAILURE, error: error_message });
   }
