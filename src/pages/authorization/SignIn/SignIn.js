@@ -17,13 +17,13 @@ const SignIn = () => {
       password: "",
     },
     validationSchema: yup.object({
-      email: yup.string().email("Invalid email format").required("Required!"),
+      email: yup.string().email("Неверный email фомат").required("Обязательно!"),
       password: yup
         .string()
-        .required("Required!")
+        .required("Обязательно!")
         .matches(
           /^.*(?=.{8,})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-          "A password must contains at least eight characters, including at least one number and includes both lower and uppercase letters"
+          "Пароль должен содержать хотя бы восемь символов, включая хотя бы одну цифру и обе строчные и заглавные буквы"
         ),
     }),
     onSubmit: (value) => {
@@ -58,6 +58,7 @@ const SignIn = () => {
         </div>
         <div className="form__additional-links">
           <Link to="/signUp">Регистрация</Link>
+          <Link to="/forgotPassword">Забыли пароль?</Link>
         </div>
       </form>
       <div className="salutation">
