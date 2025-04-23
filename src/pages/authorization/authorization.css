@@ -73,4 +73,5 @@
   text-decoration: underline;
   color: var(--bs-light);
   margin-top: 5px;
+  width: fit-content;
 }
