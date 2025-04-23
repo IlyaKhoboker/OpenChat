@@ -62,7 +62,15 @@
   display: flex;
   justify-content: space-between;
 }
+
 .form__additional-links a {
   text-decoration: underline;
   color: var(--bs-light);
+}
+
+.form__social-networks-auth {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--bs-light);
+  margin-top: 5px;
 }
