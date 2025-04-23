@@ -20,7 +20,7 @@ export default function ResetPassword() {
     validationSchema: yup.object({
       password: yup
         .string()
-        .required("Required!")
+        .required("Обязательно!")
         .matches(
           /^.*(?=.{8,})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
           "Пароль должен содержать хотя бы восемь символов, включая хотя бы одну цифру и обе строчные и заглавные буквы"
