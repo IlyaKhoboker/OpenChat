@@ -2,6 +2,7 @@ import SignIn from "../../../pages/authorization/SignIn/SignIn";
 import SignUp from "../../../pages/authorization/SignUp/SignUp";
 import ResetPassword from "../../../pages/authorization/ResetPassword/ResetPassword";
 import ForgotPassword from "../../../pages/authorization/ForgotPassword/ForgotPassword";
+import Main from "../../../pages/main/Main";
 
 export const publicRoutes = [
   {
@@ -22,5 +23,12 @@ export const publicRoutes = [
   {
     path: "/resetPassword",
     Component: ResetPassword,
+  },
+];
+
+export const privateRoutes = [
+  {
+    path: "/main",
+    Component: Main,
   },
 ];
