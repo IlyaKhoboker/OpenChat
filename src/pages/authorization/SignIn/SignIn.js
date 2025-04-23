@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import "../authorization.css";
 import { Button, Label, Input } from "reactstrap";
-import { signInAction } from "../../../app/providers/store/actions/authActions";
+import { signInAction, googleSignInAction } from "../../../app/providers/store/actions/authActions";
 import { Link } from "react-router-dom";
 
 const SignIn = () => {
@@ -59,6 +59,14 @@ const SignIn = () => {
         <div className="form__additional-links">
           <Link to="/signUp">Регистрация</Link>
           <Link to="/forgotPassword">Забыли пароль?</Link>
+        </div>
+        <div
+          className="form__social-networks-auth"
+          onClick={() => {
+            dispatch(googleSignInAction());
+          }}
+        >
+          Войти с помощью Google
         </div>
       </form>
       <div className="salutation">
